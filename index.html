@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Enoa Worldmap</title>
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="navbar">
+      <button id="zoom-in-button">Zoom-In</button>
+      <button id="zoom-out-button">Zoom-Out</button>
+      <input type="search" id="search-marker-input" placeholder="Enter character name" />
+      <button id ="search-button">Search</button>
+    </div>
+    <main>
+      <div id="container">
+        <div id="map">  
+          <div class="marker-container" id="yesei-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">YESEI</div>
+            </div>
+          </div>
+          <div class="marker-container" id="earlshade-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">EARLSHADE</div>
+            </div>
+          </div>
+          <div class="marker-container" id="erisa-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">ERISA</div>
+            </div>
+          </div>
+          <div class="marker-container" id="nause-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">NAUSE</div>
+            </div>
+          </div>
+          <div class="marker-container" id="orror-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">ORROR</div>
+            </div>
+          </div>
+          <div class="marker-container" id="wei-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">WEI</div>
+            </div>
+          </div>
+          <div class="marker-container" id="nadir-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">NADIR</div>
+            </div>
+          </div>
+          <div class="marker-container" id="fiona-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">FIONA</div>
+            </div>
+          </div>
+          <div class="marker-container" id="calcopi-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">CALCOPI</div>
+            </div>
+          </div>
+          <div class="marker-container" id="aruan-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">ARUAN</div>
+            </div>
+          </div>
+          <div class="marker-container" id="mibriana-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">MIBRIANA</div>
+            </div>
+          </div>
+          <div class="marker-container" id="arasol-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">ARASOL</div>
+            </div>
+          </div>
+          <div class="marker-container" id="dobel-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">DOBEL</div>
+            </div>
+          </div>
+          <div class="marker-container" id="aurixion-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">AURIXION</div>
+            </div>
+          </div>
+          <div class="marker-container" id="ialioi-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">IALIOI</div>
+            </div>
+          </div>
+          <div class="marker-container" id="inami-marker">
+            <div class="marker">
+              <div class="marker-dot"></div>
+              <div class="marker-text">INAMI</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar">
+        <div id ="range-container">
+          <input type="range" min="1" max="3" value="1" id="date-range">
+          <span id="date">Date 1</span>
+        </div>
+        <div id="event-section">
+          <div id="events-list"></div>
+          <div id="event-details">
+            <span id="detailed-text"></span>
+            <div id="event-buttons">
+              <div id="step-container">
+                <button id="previous-event-button" disabled> &lt; </button>
+                <button id="next-event-button" disabled> &gt; </button>
+              </div>
+              <div id="return-container">
+                <button id="return-button" disabled><abbr title="Return to first selection">Revert</abbr></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    <main>
+    <script src="script.js"></script>
+  </body>
+</html>

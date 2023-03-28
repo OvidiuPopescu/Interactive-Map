@@ -1,0 +1,240 @@
+#navbar {
+    position: fixed;
+    z-index: 1;
+}
+
+main {
+    display: flex;
+}
+
+#map {
+    width: 965px;  
+    height: 700px;
+    background-image: url("Map.png"); 
+    background-size: cover;
+}
+
+#container {
+    width: 1100px;
+    height: 700px;
+    overflow: auto;
+    display: inline-block;
+}
+
+/*markers*/
+
+.marker-container {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 35.63px;
+    height: 23.6px;
+    position: relative;
+}
+
+.marker {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#yesei-marker {
+    left: 58%;
+    top: 26%; 
+}
+
+#earlshade-marker {
+    left: 67%;
+    top: 18%;
+}
+
+#erisa-marker {
+    left: 67%;
+    top: 52%;
+}
+
+#nause-marker {
+    left: 85%;
+    top: 38%;
+}
+
+#orror-marker {
+    left: 87%;
+    top: 17%;
+}
+
+#wei-marker {
+    left: 51%;
+    top: 39%;
+}
+
+#nadir-marker {
+    left: 58%;
+    top: 19%;
+}
+
+#fiona-marker {
+    left: 47%;
+    top: 1%;
+}
+
+#calcopi-marker {
+    left: 61%;
+    top: -15%;
+}
+
+#aruan-marker {
+    left: 45%;
+    top: -26%;
+}
+
+#mibriana-marker {
+    left: 21%;
+    top: 50%;
+}
+
+#arasol-marker {
+    left: 20%;
+    top: -13%;
+}
+
+#dobel-marker {
+    left: 5%;
+    top: -1%;
+}
+
+#aurixion-marker {
+    left: 26%;
+    top: 5%;
+}
+
+#ialioi-marker {
+    left: 44%;
+    top: 33%;
+}
+
+#inami-marker {
+    left: 91%;
+    top: -26%;
+}
+
+.marker-text {
+    font-size: 10px;
+    font-weight: bold;
+    background-color: white;
+    width: fit-content;
+    margin: auto;
+    border: 1px solid;
+    padding: 0px 2px;
+}
+
+.marker-dot {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    margin: auto;
+}
+
+/*sidebar*/
+
+#sidebar{
+    display: flex;
+    height: 700px;
+    width: 400px;
+    border: 1px solid #000;
+    flex-direction: column;
+}
+
+#range-container {
+    display: flex;
+    margin-top: 10%;
+}
+
+#event-section {
+    margin-top: 10px;
+}
+
+#events-list {
+    border: 1px solid;
+    height: 150px;
+    cursor: pointer;
+    overflow: auto;
+}
+
+#selected-event {
+    border: 1px solid;
+}
+
+#event-details {
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 150px;
+    border: 1px solid;
+    margin-top: 20px;
+    overflow: auto;
+}
+
+#event-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: flex-end;
+}
+
+#step-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#step-container button{
+    width: 27.3px;
+}
+
+#return-button abbr{
+    text-decoration: none;
+}
+
+/*WIP responsive*/
+@media only screen and (max-width: 768px) {
+    main{
+        flex-wrap: wrap;
+    }
+    #container{
+        width: 735px;
+        height: 350px;
+    }
+    #sidebar{
+        height: 343px;
+        width: 735px;
+    }
+    #event-section{
+    display: flex;
+    }
+    #range-container{
+        margin-top: 10px;
+    }
+    #events-list{
+        width: 35%;
+    }
+    #event-details{
+        margin-top: 0px;
+        width: 64%;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    #event-section{
+        flex-wrap: wrap;
+    }
+    #events-list{
+        width: 100%;
+    }
+    #event-details{
+        margin-top: 0px;
+        width: 100%;
+    }
+}
+  
