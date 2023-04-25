@@ -78,53 +78,62 @@ main {
 }
 
 #nadir-marker {
-    left: 58%;
+    left: 56%;
     top: 19%;
 }
 
 #fiona-marker {
     left: 47%;
     top: 1%;
+    display: none;
 }
 
 #calcopi-marker {
     left: 61%;
     top: -15%;
+    display: none;
 }
 
 #aruan-marker {
     left: 45%;
     top: -26%;
+    display: none;
 }
 
 #mibriana-marker {
     left: 21%;
     top: 50%;
+    display: none;
 }
 
 #arasol-marker {
     left: 20%;
     top: -13%;
+    display: none;
 }
 
 #dobel-marker {
     left: 5%;
     top: -1%;
+    display: none;
 }
 
 #aurixion-marker {
     left: 26%;
     top: 5%;
+    display: none;
 }
 
 #ialioi-marker {
     left: 44%;
     top: 33%;
+    display: none;
 }
 
 #inami-marker {
     left: 91%;
     top: -26%;
+    display: none;
 }
 
 .marker-text {

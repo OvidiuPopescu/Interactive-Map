@@ -316,8 +316,8 @@ let displayDate1 = function() {
     orror.marker.style.top = '17%';
     wei.marker.style.left = '51%';
     wei.marker.style.top = '39%';
-    nadir.marker.style.left = '58%';
-    nadir.marker.style.top = '19%';
+    nadir.marker.style.left = '57%';
+    nadir.marker.style.top = '20%';
 
     let listEntries = eventsList.childNodes;
     listEntries.forEach(function(entry){
@@ -364,20 +364,20 @@ displayDate1();
 
 let displayDate2 = function() {
     date.innerHTML = 'Date 2';
-    yesei.marker.style.left = '81%';
+    yesei.marker.style.left = '78%';
     yesei.marker.style.top = '78%';
     earlshade.marker.style.left = '52%';
     earlshade.marker.style.top = '5%';
     erisa.marker.style.left = '67%';
     erisa.marker.style.top = '52%';
-    nause.marker.style.left = '91%';
+    nause.marker.style.left = '86%';
     nause.marker.style.top = '33%';
-    orror.marker.style.left = '94%';
+    orror.marker.style.left = '88%';
     orror.marker.style.top = '13%';
     wei.marker.style.left = '55%';
     wei.marker.style.top = '20%';
-    nadir.marker.style.left = '58%';
-    nadir.marker.style.top = '19%';
+    nadir.marker.style.left = '57%';
+    nadir.marker.style.top = '20%';
     
     let listEntries = eventsList.childNodes;
     listEntries.forEach(function(entry){
@@ -422,10 +422,10 @@ let displayDate3 = function() {
     erisa.marker.style.top = '55%';
     nause.marker.style.left = '85%';
     nause.marker.style.top = '38%';
-    orror.marker.style.left = '94%';
+    orror.marker.style.left = '88%';
     orror.marker.style.top = '13%';
     wei.marker.style.left = '55%';
-    wei.marker.style.top = '11%';
+    wei.marker.style.top = '9%';
     nadir.marker.style.left = '27%';
     nadir.marker.style.top = '9%';
 
@@ -603,6 +603,25 @@ dateRange.addEventListener('change', function() {                               
         returnButoon.setAttribute('disabled','true');
     }
 });
+
+/*select marker by clicking it on map*/
+
+for (i = 0; i< markerData.length; i++) {                                                /*for every marker on map...*/
+    let markerId = markerData[i].id;                                                    /*we grab the id*/
+    console.log(markerId);
+    markerData[i].addEventListener('click', function(){
+        console.log('Click!!!');
+        console.log(markerId); 
+
+        let idToArray = markerId.split('-');                                            /*we extract the markers name*/
+        extractedName = idToArray[0];
+        for (x in eventsArray) {                                                        /*and we add the corresponding selection event to the markers*/  
+            if (eventsArray[x].name.includes(extractedName)) {
+                eventsArray[x]();
+                }
+        } 
+    })
+}
 
 
 
