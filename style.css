@@ -45,6 +45,7 @@ main {
 .marker {
     display: flex;
     flex-direction: column-reverse;
+    cursor: pointer;
 }
 
 #yesei-marker {
@@ -167,7 +168,24 @@ main {
 
 #range-container {
     display: flex;
-    margin-top: 10%;
+    margin-top: 5%;
+    flex-direction: column-reverse;
+    height: 48.8px;
+}
+
+#date {
+    display: flex;
+}
+
+.date-text {
+    display: inline-block;
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.date-select {
+    display: none;
+    font-size: 20px;
 }
 
 #event-section {
