@@ -32,6 +32,8 @@ let monthDropdown = document.getElementById('months');
 let yearDropdown = document.getElementById('years');
 
 let details = document.getElementById('event-details');
+let searchEventButton = document.getElementById('search-event-button');
+
 let markerId = "";
 
 let selectedMonthDates = [];                                                         /*variable will contain all dates that have the same month as the currently selected one*/
@@ -349,6 +351,9 @@ let nadirEventDetails = ['Nadir is an eccentric mage. He always had an interest 
                          '','','','','','Nadir date 9 details','Nadir date 10 details'];
 let nadir = new character('Nadir',document.getElementById('nadir-marker'),nadirEventSummaries,nadirEventDetails);
 
+let allEventDetails = [yeseiEventDetails,earlshadeEventDetails,erisaEventDetails,nauseEventDetails,orrorEventDetails,weiEventDetails,nadirEventDetails];
+let allEventSummaries = [yeseiEventSummaries,earlshadeEventSummaries,erisaEventSummaries,nauseEventSummaries,orrorEventSummaries,weiEventSummaries,nadirEventSummaries];
+
 /*date slider and event list*/
 
 let yeseiEvent = function() {
@@ -523,10 +528,18 @@ let dateFunctions = [displayDate1,displayDate2,displayDate3,displayDate4,display
 let savedRangeValue = localStorage.getItem('dateRangeValue');                         /*when page is open it will move date range to the stored value*/
 dateRange.value = savedRangeValue;
 let storedDateFunction = localStorage.getItem('date');                                /*and run the coresponding date funtion*/
+
+if (storedDateFunction !=  null) {                                                    /*so it dosen't give an error when localStorage is empty*/
 dateFunctions[storedDateFunction]();
+}
 
 markerId = localStorage.getItem('marker');                                            /*retrive id of last selected marker on page load*/
-let idToArray = markerId.split('-');                                            /*find the coresponding selectMarker funtion and run it*/
+
+let idToArray = '';
+if (markerId !=  null) {
+  idToArray = markerId.split('-');                                            /*find the coresponding selectMarker funtion and run it*/
+}
+
 extractedName = idToArray[0];
 for (x in eventsArray) {                                                       
     if (eventsArray[x].name.includes(extractedName)) {
@@ -839,9 +852,122 @@ dayDropdown.addEventListener('change', function(){
 })
 
 
+let searchEvent = document.getElementById('search-event-input');
+let searchResults = document.getElementById('result-list');
+
+searchEvent.addEventListener('change', function() {
+    
+    if (searchEvent.value != ' ' && searchEvent.value != '') {                                           /*to avoid some cases whrn it would display all results posible*/
+
+        let searchCaseUnsensitive = searchEvent.value.toLowerCase();                                     /*make search not case dependent*/
+        let testSearchWords = searchCaseUnsensitive.split(' ');                                          /*put searched words in an array*/
+        console.log(testSearchWords);
+
+        /*HERE*/
+        searchResults.innerHTML = '';                                                                    /*clear previos results*/
+
+        for (i = 0; i < allEventDetails.length; i++) {                                                   /*loop trough every character...*/
+
+            for (y = 0; y < allEventDetails[i].length; y++) {                                            /*and all its event descriptions*/
+                let allWordsIncluded = 1;                                                               
+                let eventCaseUnsensitive = allEventDetails[i][y].toLowerCase();                          /*make what is searched case independent*/
+                
+                for (x = 0; x < testSearchWords.length; x++) {                                           /*check if all searched words are found in the same event description*/
+
+                    if (eventCaseUnsensitive.includes(testSearchWords[x])) {   
+
+                    } else {
+                        allWordsIncluded = 0;                                                            /*remember if any word is missing*/
+                    }
+                }
+
+                if (allWordsIncluded == 1) {                                                            /*if all words are found...*/
+                    console.log(allEventSummaries[i][y]);
+                    let result = document.createElement('div');
+                    result.innerText = allEventSummaries[i][y];
+                    searchResults.appendChild(result);
+                    searchResults.style.display = 'block';
+
+                    result.addEventListener('click', function(){                                       /*find the Summary again when clicking it*/
+                    for (i = 0; i < allEventSummaries.length; i++) {
+                        for (x = 0; x < allEventSummaries[i].length; x++) {
+                            if (result.innerText == allEventSummaries[i][x]) {                 
+                                console.log(allEventSummaries[i][x]);
+                                dateFunctions[x]();                                                   /*go to the date coresponding to the summary*/
+                                dateRange.value = x + 1; 
+
+                                let eventWords = result.innerText.split(' ');                         /*the first word in 'result' will always be a name*/
+                                for (z in eventsArray) {
+                                    if (eventsArray[z].name.includes(eventWords[0].toLowerCase()))
+                                    eventsArray[z]();                                                 /*select the marker of the coresponding character*/                                        
+                                }
+                            }
+                        }
+                    }
+                    searchResults.style.display = 'none';                                          /*clear search after clicking on a result*/
+                    searchEvent.value = '';
+                    })
+                } 
+            }
+        }  
+    }
+})
 
 
-/*LAST UPDATES:
-1. Made no marker details disapar when pressing a event in the list
-2. Added local storage to save date and selected event
-*/
+searchEventButton.addEventListener('click', function() {                     /*copyed code for search button pressing*/
+    
+    if (searchEvent.value != ' ' && searchEvent.value != '') {                                           /*to avoid some cases whrn it would display all results posible*/
+
+        let searchCaseUnsensitive = searchEvent.value.toLowerCase();                                     /*make search not case dependent*/
+        let testSearchWords = searchCaseUnsensitive.split(' ');                                          /*put searched words in an array*/
+        console.log(testSearchWords);
+
+        /*HERE*/
+        searchResults.innerHTML = '';                                                                    /*clear previos results*/
+
+        for (i = 0; i < allEventDetails.length; i++) {                                                   /*loop trough every character...*/
+
+            for (y = 0; y < allEventDetails[i].length; y++) {                                            /*and all its event descriptions*/
+                let allWordsIncluded = 1;                                                               
+                let eventCaseUnsensitive = allEventDetails[i][y].toLowerCase();                          /*make what is searched case independent*/
+                
+                for (x = 0; x < testSearchWords.length; x++) {                                           /*check if all searched words are found in the same event description*/
+
+                    if (eventCaseUnsensitive.includes(testSearchWords[x])) {   
+
+                    } else {
+                        allWordsIncluded = 0;                                                            /*remember if any word is missing*/
+                    }
+                }
+
+                if (allWordsIncluded == 1) {                                                            /*if all words are found...*/
+                    console.log(allEventSummaries[i][y]);
+                    let result = document.createElement('div');
+                    result.innerText = allEventSummaries[i][y];
+                    searchResults.appendChild(result);
+                    searchResults.style.display = 'block';
+
+                    result.addEventListener('click', function(){                                       /*find the Summary again when clicking it*/
+                    for (i = 0; i < allEventSummaries.length; i++) {
+                        for (x = 0; x < allEventSummaries[i].length; x++) {
+                            if (result.innerText == allEventSummaries[i][x]) {                 
+                                console.log(allEventSummaries[i][x]);
+                                dateFunctions[x]();                                                   /*go to the date coresponding to the summary*/
+                                dateRange.value = x + 1; 
+
+                                let eventWords = result.innerText.split(' ');                         /*the first word in 'result' will always be a name*/
+                                for (z in eventsArray) {
+                                    if (eventsArray[z].name.includes(eventWords[0].toLowerCase()))
+                                    eventsArray[z]();                                                 /*select the marker of the coresponding character*/                                        
+                                }
+                            }
+                        }
+                    }
+                    searchResults.style.display = 'none';                                          /*clear search after clicking on a result*/
+                    searchEvent.value = '';
+                    })
+                } 
+            }
+        }  
+    }
+})

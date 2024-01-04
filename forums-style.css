@@ -1,0 +1,196 @@
+body {
+    background-image: url("./Resources/Paper\ texture\ background.jpg");
+    background-size: cover;
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+#header {
+    display: flex;
+    background: #d0d59c;
+    border-style: outset;
+    border-color: #f7dca6;
+    
+}
+
+#main-button-container {
+    padding: 25px 10px 25px 
+}
+
+#main-button {
+    border-style: outset;
+    background: #e5e8c4;
+}
+
+#main-button a {
+    text-decoration: none;
+    padding: 5px;
+}
+
+#logged-user {
+    display: none;
+    border-style: inset;
+    background: #e5e8c4;
+    padding: 3px 4px;
+    width: 160px;             
+}
+
+#loggin-inputs {
+    width: 344px;
+}
+
+#logg-buttons {
+    margin-top: 2px;
+    margin-left: 2px;
+    width: 341px;
+}
+
+#sign-up-button {
+    display: inline-block;
+    width: 48%;
+    border-style: outset;
+    background: #e5e8c4;
+    text-align: center;
+}
+
+#log-in-button {
+    display: inline-block;
+    width: 48%;
+    border-style: outset;
+    background: #e5e8c4;
+    text-align: center;
+}
+
+#main-forums {
+    width: 90%;
+    height: 650px;
+    background-color:  #505333;
+    margin: auto;
+    border-style: outset;
+    border-color: #f7dca6;
+}
+
+#posts-section {
+    background-color: #505333;
+}
+
+#post-button {
+    border-style: outset;
+    background: #e5e8c4;
+    text-align: center;
+    width: 84px;
+    margin-left: auto;
+    margin-top: 2px;
+    margin-bottom: 1px;
+}
+
+.post {
+    border: 1px solid;
+    padding: 10px;
+    background-color: white;
+    margin-top: 2px;
+    margin-left: 0.5px;
+    margin-right: 0.5px 
+}
+
+/*style for forums-post*/
+
+#post-maker {
+    display: flex;
+    flex-direction: column;
+}
+
+#post-title {
+    margin: 10px 10px 0px 10px;
+}
+
+#post-content {
+    height: 572px;
+    margin: 10px;
+}
+
+#post-commit {
+    border-style: outset;
+    background: #e5e8c4;
+    text-align: center;
+}
+
+
+/*style for forums-selected-post*/
+
+#main-forums {
+    overflow: overlay;
+}
+
+#post-details {
+    background-color: white;
+    height: 90px;
+    padding: 10px;
+    margin: 6px;
+}
+
+#comment-editor {
+    display: flex;
+    flex-direction: column;
+}
+
+#ta-container {
+    display: flex;
+}
+
+#add-comment {
+    border-style: outset;
+    background: #e5e8c4;
+    text-align: center;
+    width: 84px;
+    margin-left: 7px;
+}
+
+#comment-list {
+    background-color: white;
+    margin: 6px;
+}
+
+.comment {
+    height: 90px;
+    padding: 10px;
+    border-bottom: 4px solid #505333;;
+}
+
+#write-comment {
+    height: 80px;
+    width: 100%;
+    margin: 7px;
+}
+
+#user-area {   
+    margin-left: auto;
+    padding: 15px 10px 6px 0px;
+}
+
+.comment-author {
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+#leave-comment {
+    border-style: outset;
+    background: #e5e8c4;
+    text-align: center;
+    width: 100px;
+    display: none;
+}
+
+@media only screen and (max-width: 480px) {
+    #loggin-inputs {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    #sign-up-button, #log-in-button {
+        width: 23%;
+    }
+    #logged-user {
+        width: 110px;
+    }
+}

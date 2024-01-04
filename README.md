@@ -2,7 +2,11 @@
 
 Prototype for a interactive map.
 
-Functionality:
+Update 0.2:
+ - added a basic forum where you can make an account, create posts and leave comments
+ - now you can search events; seach field will display a list that displays all events that contain the seached words
+
+Features:
 
  - zoom-in and zoom-out buttons
  - hold the buttons for continous zoom-in and zoom-out
@@ -14,5 +18,5 @@ Functionality:
  - selecting one of the events will focus the coresponding marker on the map and display the details of the event and reveal advanced options for that marker
  - pressing the forrward or back button for the selected marker, will automaticaly move it one step in the future or past
  return to the initially selected event by pressing the 'Revert' button
- - *NEW* when reloading the page it will rememer yout last date and events selections 
- - *NEW* you can modify the date by pressing the Edit button and selecting the desired year/month/day trough the dropdowns (only dates with events will appear as options)
+ - when reloading the page it will rememer yout last date and events selections 
+ - you can modify the date by pressing the Edit button and selecting the desired year/month/day trough the dropdowns (only dates with events will appear as options)

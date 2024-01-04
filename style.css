@@ -1,13 +1,47 @@
+body {
+    background-image: url("./Resources/Paper\ texture\ background.jpg");
+    background-size: cover;
+    margin: 0px;
+}
+
 #navbar {
+    display: flex;
     position: fixed;
     z-index: 1;
     margin: 1px;
 }
 
-body {
-    background-image: url("./Resources/Paper\ texture\ background.jpg");
-    background-size: cover;
-    margin: 0px;
+#zoom-container {
+    display: flex;
+}
+
+#zoom-in-button, #zoom-out-button, #search-button, #forum-button, #search-event-button {
+    border-style: outset;
+    background: #e5e8c4;
+    text-align: center;
+    margin-right: 5px;
+    width: 70px;
+    height: 20.2px;
+}
+
+#search-button, #search-event-button {
+    margin-left: 2px;
+}
+
+#search-marker-input, #search-event-input {
+    height: 25.2px;
+}
+
+#event-search {
+    display: flex;
+    flex-direction: column;
+}
+
+#result-list {
+    display: none;
+    height: 150px;
+    background-color: #fff;
+    border: 1px solid;
 }
 
 main {
@@ -188,6 +222,13 @@ main {
     font-size: 20px;
 }
 
+#change-date {
+    border-style: outset;
+    background: #e5e8c4;
+    text-align: center;
+    width: 40px;
+}
+
 #event-section {
     margin-top: 10px;
 }
@@ -243,6 +284,10 @@ main {
     width: 27.3px;
 }
 
+#previous-event-button, #next-event-button, #return-button {
+    background-color: #e5e8c4;
+}
+
 #return-button abbr{
     text-decoration: none;
 }
@@ -253,7 +298,38 @@ main {
     height: 42.4px;
 }
 
+#forum-container {
+    display: flex;
+    justify-content: flex-end;
+    height: 84%;
+    align-items: flex-end;
+}
+
+#forum-button {
+    background: #816c3c;
+    border-color: #816c3c;
+    margin-right: 0px;
+}
+
+#forum-button a {
+    text-decoration: none;
+    color: #2d2626;
+}
+
 /*WIP responsive*/
+
+@media only screen and (max-width: 920px) {
+    #navbar {
+        flex-direction: column;
+    }
+    #search-marker-input, #search-event-input {
+        margin-top: 3px;
+        width: 155px;
+    }
+}
+
+
+
 @media only screen and (max-width: 768px) {
     main{
         flex-wrap: wrap;
@@ -278,8 +354,9 @@ main {
     #event-details{
         margin-top: 0px;
         width: 64%;
+        border-left: 1px solid;
+        border-right: 3px solid #816c3c;
     }
-
 }
 
 @media only screen and (max-width: 480px) {
@@ -292,6 +369,8 @@ main {
     #event-details{
         margin-top: 0px;
         width: 100%;
+        border-left: none;
+        border-right: none;
     }
 }
   
